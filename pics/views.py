@@ -39,6 +39,6 @@ class FotoViewSet(viewsets.ModelViewSet):
         foto = self.get_object()
 
         with open(foto.imagem.path, 'rb') as img:
-            response = HttpResponse(FileWrapper(img), content_type='application/file')
+            response = HttpResponse(FileWrapper(img), content_type='image/jpeg')
 
             return response
